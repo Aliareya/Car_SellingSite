@@ -68,3 +68,12 @@ body{
   font-weight: 900;
   font-style: italic;
 }
+
+
+.content_body_bg{
+  background: linear-gradient(180deg, #0f0f0ff7 0%, #000000df 100%);
+}
+
+.content_banner_bg{
+  background: linear-gradient(180deg, #0f0f0ff7 0%, #0c0c0cd0 100%);
+}

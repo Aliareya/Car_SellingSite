@@ -1,11 +1,29 @@
-import React from 'react'
+import AppRoutes from "./routes/AppRoutes";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <div className='text-4xl sm:text-red-950 md:text-green-600 lg:text-yellow-600 xl:text-blue-600'>
-      App CONTAINER
+    <div className="w-full ">
+      <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeButton={false}
+        closeOnClick
+        rtl={false}
+        theme="dark"
+        toastClassName={() =>
+          "relative flex p-4 rounded-lg bg-zinc-800 text-white shadow-xl border border-gray-500"
+        }
+        bodyClassName={() => "text-sm font-medium"}
+      />
+
+      {/* Main Componenet on site */}
+      <AppRoutes />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
