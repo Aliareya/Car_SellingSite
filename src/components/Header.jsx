@@ -12,7 +12,7 @@ function Header() {
        <img src={logo} className='w-40 h-10' alt="" />
       </div>
       {/* Navigation Menu */}
-        <ul className="md:hidden flex justify-end md:flex gap-7 items-center text-sm font-medium">
+        <ul className="md:hidden flex justify-end gap-7 items-center text-sm font-medium">
           <li className="text-base font-normal text-gray-200 cursor-pointer transition">Home</li>
           <li className="text-base font-normal text-gray-200 cursor-pointer transition">About</li>
           <li className="text-base font-normal text-gray-200 cursor-pointer transition">Shop</li>
