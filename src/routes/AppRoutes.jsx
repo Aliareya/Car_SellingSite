@@ -4,16 +4,26 @@ import MainLayout from "../layouts/MainLayout";
 
 // import pages
 import Home from "../pages/Home";
-import About from "../pages/About";
+import Shop from "../pages/Shop";
+import Cart from "../pages/Cart";
+import Contact from "../pages/Contact";
+import Services from "../pages/Services";
+import Newcar from "../pages/Newcar";
+import Wishlist from "../pages/Wishlist";
+import Notfound from "../pages/Notfound";
 
 function AppRoutes() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<div>Contact Page</div>} />
-        <Route path="*" element={<div>404 Not Found</div>} />
+        <Route path="/shop" element={<Shop/>} />
+        <Route path="/services" element={<Services/>} />
+        <Route path="/cart" element={<Cart/>} />
+        <Route path="/new" element={<Newcar/>} />
+        <Route path="/wishlist" element={<Wishlist/>} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="*" element={<Notfound/>} />
       </Route>
     </Routes>
   );
