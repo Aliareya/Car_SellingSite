@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import car1 from "../assets/car/car1.png";
 import car2 from "../assets/car/car2.png";
 import car3 from "../assets/car/car3.png";
+import SearchBox from "./SearchBox";
 
 const carImages = [car2, car1, car3];
 const carNames = ["Mercedes Benz - 2.0", "Lamborghini Centenario", "Lamborghini Aventador"];
@@ -61,15 +62,18 @@ function HomeBanner({ banner_bg }) {
         </div>
 
         {/* Car Image Slide-In */}
-        <div className="w-1/2 md:w-full sm:w-full h-96 sm:h-52 flex items-center justify-center md:relative sm:relative ">
+        <div className="w-1/2 md:w-full sm:w-full h-96 sm:h-60 flex items-center justify-center md:relative sm:relative ">
           <img
-            key={carIndex} // Force re-render for transition
+            key={carIndex} 
             src={carImages[carIndex]}
             alt="Car"
             className={`absolute w-2/3 md:w-full sm:w-full h-auto top-44 md:top-5 sm:top-6 lg:top-48 right-4 sm:right-0 transform transition-all duration-700 ease-out 
               ${fade ? "-translate-x-0 opacity-100" : "-translate-x-full opacity-0"}`}
           />
         </div>
+       {/* SerchBox  */}
+        <SearchBox/>
+
       </div>
     </div>
   );

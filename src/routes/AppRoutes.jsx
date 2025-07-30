@@ -3,13 +3,13 @@ import { Route, Routes } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 
 // import pages
-import Home from "../pages/Home";
-import Shop from "../pages/Shop";
-import Cart from "../pages/Cart";
-import Contact from "../pages/Contact";
-import Services from "../pages/Services";
-import Newcar from "../pages/Newcar";
-import Wishlist from "../pages/Wishlist";
+import Home from "../pages/home/Home";
+import Shop from "../pages/shop/Shop";
+import Cart from "../pages/cart/Cart";
+import Contact from "../pages/contact/Contact";
+import Services from "../pages/services/Services";
+import Newcar from "../pages/newcar/Newcar";
+import Wishlist from "../pages/wishlist/Wishlist";
 import Notfound from "../pages/Notfound";
 
 function AppRoutes() {
