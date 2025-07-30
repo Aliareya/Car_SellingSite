@@ -16,7 +16,7 @@ function MainLayout() {
       <div className="w-full px-16 sm:px-2 md:px-5 lg:px-10">
         <Outlet />
       </div>
-      <div className="w-full px-16 sm:px-2 md:px-5 lg:px-10 h-40 bg-zinc-900">
+      <div className="w-full px-20 sm:px-3 md:px-5 lg:px-10 py-5 bg-zinc-900">
         <Footer />
       </div>
     </div>
