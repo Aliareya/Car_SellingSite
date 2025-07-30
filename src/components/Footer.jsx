@@ -72,7 +72,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-1/2 md:px-3 md:w-full sm:w-full sm:pt-8 lg:w-3/5 h-72 sm:h-auto flex sm:justify-center sm:flex-wrap justify-between items-center">
+      <div className="w-1/2 md:px-3 md:w-full sm:w-full sm:pt-8 lg:w-3/5 h-72 sm:h-auto flex sm:justify-start sm:flex-wrap justify-between items-center">
         <FooterCart lable={"About Company"} list={ourCompanyLinks}/>
         <FooterCart lable={"Vehicles Type"} list={vehicleCategories}/>
         <FooterCart className="sm:hidden" lable={"Quick links"} list={quickLinks}/>
