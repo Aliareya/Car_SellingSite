@@ -38,45 +38,45 @@ function BrowseTopCar() {
         </div>
       </div>
       <div className='w-full mt-10 flex sm:flex-col justify-between items-center gap-6 flex-wrap'>
-        <div className='rounded-lg w-1/6 sm:w-full h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
+        <div className='rounded-lg w-1/6 sm:w-full shadow-lg h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
           <img className='w-[90% text-black' style={{color:'black'}} src={cart_con2} alt="" />
-          <h1 className='text-2xl md:text-base font-bold '>Crossover</h1>
+          <h1 className='text-2xl md:text-base lg:text-lg font-bold '>Crossover</h1>
         </div>
-        <div className='rounded-lg w-1/6 sm:w-full h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
+        <div className='rounded-lg w-1/6 sm:w-full shadow-lg h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
           <img className='w-[90% text-black' style={{color:'black'}} src={cart_con3} alt="" />
-          <h1 className='text-2xl md:text-base font-bold '>Convertible</h1>
+          <h1 className='text-2xl md:text-base lg:text-lg font-bold '>Convertible</h1>
         </div>
-        <div className='rounded-lg w-1/6 sm:w-full h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
+        <div className='rounded-lg w-1/6 sm:w-full shadow-lg h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
           <img className='w-[90% text-black' style={{color:'black'}} src={cart_con4} alt="" />
-          <h1 className='text-2xl md:text-base font-bold '>Compact</h1>
+          <h1 className='text-2xl md:text-base lg:text-lg font-bold '>Compact</h1>
         </div>
-        <div className='rounded-lg w-1/6 sm:w-full h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
+        <div className='rounded-lg w-1/6 sm:w-full shadow-lg h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
           <img className='w-[90% text-black' style={{color:'black'}} src={cart_con5} alt="" />
-          <h1 className='text-2xl md:text-base font-bold '>Sedan</h1>
+          <h1 className='text-2xl md:text-base lg:text-lg font-bold '>Sedan</h1>
         </div>
-        <div className='rounded-lg w-1/6 sm:w-full h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
+        <div className='rounded-lg w-1/6 sm:w-full shadow-lg h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
           <img className='w-[90% text-black' style={{color:'black'}} src={cart_con1} alt="" />
-          <h1 className='text-2xl md:text-base font-bold '>Sport Coupe</h1>
+          <h1 className='text-2xl md:text-base lg:text-lg font-bold '>Sport Coupe</h1>
         </div>
-        <div className='rounded-lg w-1/6 sm:w-full h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
+        <div className='rounded-lg w-1/6 sm:w-full shadow-lg h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
           <img className='w-[90% text-black' style={{color:'black'}} src={cart_con1} alt="" />
-          <h1 className='text-2xl md:text-base font-bold '>Suv</h1>
+          <h1 className='text-2xl md:text-base lg:text-lg font-bold '>Suv</h1>
         </div>
-        <div className='rounded-lg w-1/6 sm:w-full h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
+        <div className='rounded-lg w-1/6 sm:w-full shadow-lg h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
           <img className='w-[90% text-black' style={{color:'black'}} src={cart_con1} alt="" />
-          <h1 className='text-2xl md:text-base font-bold '>Coup</h1>
+          <h1 className='text-2xl md:text-base lg:text-lg font-bold '>Coup</h1>
         </div>
-        <div className='rounded-lg w-1/6 sm:w-full h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
+        <div className='rounded-lg w-1/6 sm:w-full shadow-lg h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
           <img className='w-[90% text-black' style={{color:'black'}} src={cart_con1} alt="" />
-          <h1 className='text-2xl md:text-base font-bold '>Family MPV</h1>
+          <h1 className='text-2xl md:text-base lg:text-lg font-bold '>Family MPV</h1>
         </div>
-        <div className='rounded-lg w-1/6 sm:w-full h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
+        <div className='rounded-lg w-1/6 sm:w-full shadow-lg h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
           <img className='w-[90% text-black' style={{color:'black'}} src={cart_con1} alt="" />
-          <h1 className='text-2xl md:text-base font-bold '>Pickup</h1>
+          <h1 className='text-2xl md:text-base lg:text-lg font-bold '>Pickup</h1>
         </div>
-        <div className='rounded-lg w-1/6 sm:w-full h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
+        <div className='rounded-lg w-1/6 sm:w-full shadow-lg h-32 p-3 flex flex-col items-center justify-center gap-3 bg-gray-100'>
           <img className='w-[90% text-black' style={{color:'black'}} src={cart_con1} alt="" />
-          <h1 className='text-2xl md:text-base font-bold '>Wagon</h1>
+          <h1 className='text-2xl md:text-base lg:text-lg font-bold '>Wagon</h1>
         </div>
       </div>
     </div>
