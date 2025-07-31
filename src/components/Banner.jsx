@@ -1,7 +1,6 @@
 import bg from "../assets/images/texture-bg.png";
 import { useLocation } from "react-router-dom";
 import HomeBanner from "./HomeBanner";
-import SearchBox from "./SearchBox";
 
 function Banner() {
   const location = useLocation().pathname;
