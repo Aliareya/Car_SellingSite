@@ -55,7 +55,7 @@ function Header() {
       <div
         className={`
           fixed top-0 left-0 h-screen z-50 bg-gray-200 overflow-y-auto
-          px-3 py-5 sm:w-[65%] md:w-[40%]
+          px-3 py-5 sm:w-[75%] md:w-[40%]
           transition-transform duration-300 ease-in-out
           ${mobailMenuOpen ? "translate-x-0" : "-translate-x-full"}
         `}
