@@ -5,7 +5,7 @@ import car2 from "../assets/car/car2.png";
 import car3 from "../assets/car/car3.png";
 import SearchBox from "./SearchBox";
 
-const carImages = [car2, car1, car3];
+const carImages = [car2, car1, car3 ];
 const carNames = ["Mercedes Benz - 2.0", "Lamborghini Centenario", "Lamborghini Aventador"];
 
 function HomeBanner({ banner_bg }) {
