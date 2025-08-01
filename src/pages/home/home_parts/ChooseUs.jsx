@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 
 function ChooseUs() {
   return (
-    <div className='w-full h-fit pb-20 md:pb-14 sm:pb-10 sm:pt-3 sm:flex-col flex justify-between items-center md:items-start'>
+    <div className='w-full h-fit pb-14  md:pb-14 sm:pb-1 sm:pt-3 sm:flex-col flex justify-between items-center md:items-start'>
       <div className='w-1/2 sm:w-full h-fit'>
         <p className='text-xl font-semibold text-red-700'>Why Choose Us</p>
         <h1 className='text-5xl sm:text-3xl font-bold pt-4'>Don't Waste Your Valuable Time or Money </h1>

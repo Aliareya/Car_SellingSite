@@ -4,9 +4,8 @@ import { Icon } from '@iconify/react';
 import carimg from "../assets/car/car2.png";
 
 function DownloadAppSuggestio() {
-  const Collor = '#ffeff1';
   return (
-    <div className='w-full flex sm:flex-col justify-between items-center h-fit bg-[#ffeff1] sm:pt-10 sm:p-3 p-16 md:p-5 bg-center bg-cover rounded-lg'
+    <div className='w-full flex sm:flex-col justify-between items-center h-fit bg-[#ffeff1] sm:pt-10 sm:p-3 p-14 md:p-5 bg-center bg-cover rounded-lg'
      style={{backgroundImage: `url(${appbg})`}}>
       <div className='w-1/2 sm:w-full'>
         <h1 className='text-4xl md:text-3xl sm:text-2xl font-bold'>Autohive User Friendly App Available</h1>

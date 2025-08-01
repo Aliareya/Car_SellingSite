@@ -4,6 +4,7 @@ import ProductCart from "../../../components/product/ProductCart";
 import car3 from "../../../assets/product/car1.jpg";
 import car2 from "../../../assets/product/car2.jpg";
 import car1 from "../../../assets/product/car3.jpg";
+import HomeButton from "../../../utils/HomeButton";
 
 
 // cars data
@@ -46,7 +47,7 @@ const carListings = [
 
 function Latest_Submission() {
   return (
-    <div className="w-full h-auto pb-20 sm:pb-5 pt-16 sm:pt-10 ">
+    <div className="w-full h-auto pb-14 sm:pb-5 pt-14 sm:pt-10 ">
       <div className="flex flex-col items-center justify-center">
         <p className="text-xl font-bold text-red-700 pb-3">Latest Submission</p>
         <h2 className="text-3xl font-bold sm:text-center  mb-4">
@@ -55,24 +56,9 @@ function Latest_Submission() {
       </div>
 
       <div className="w-full flex justify-center sm:justify-center items-center gap-10 sm:gap-y-4  flex-wrap ">
-        <div className="relative group w-fit px-4 py-2 flex gap-2 rounded-lg overflow-hidden border-y-2 border-[#b91c1c] bg-gray-100">
-          <div className="absolute inset-0 bg-[#b91c1c] rounded-b-md transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0"></div>
-          <span className="text-lg font-semibold text-black group-hover:text-white z-10">
-            Latest Car
-          </span>
-        </div>
-        <div className="relative group w-fit px-4 py-2 flex gap-2 rounded-lg overflow-hidden border-y-2 border-[#b91c1c] bg-gray-100">
-          <div className="absolute inset-0 bg-[#b91c1c] rounded-b-md transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0"></div>
-          <span className="text-lg font-semibold text-black group-hover:text-white z-10">
-            Featured
-          </span>
-        </div>
-        <div className="relative group w-fit px-4 py-2 flex gap-2 rounded-lg overflow-hidden border-y-2 border-[#b91c1c] bg-gray-100">
-          <div className="absolute inset-0 bg-[#b91c1c] rounded-b-md transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0"></div>
-          <span className="text-lg font-semibold text-black group-hover:text-white z-10">
-            Popular
-          </span>
-        </div>
+        <HomeButton title={"Latest Car"} Icon={''}/>
+        <HomeButton title={"Featured"} Icon={''}/>
+        <HomeButton title={"Popular"} Icon={''}/>
       </div>
 
       <div className="w-full h-auto mt-10 flex md:flex-col sm:flex-col justify-between items-center gap-4">
