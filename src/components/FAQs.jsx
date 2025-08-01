@@ -30,7 +30,7 @@ function FAQs() {
       </div>
 
       {/* Filter Buttons */}
-      <div className="w-full flex justify-center items-center gap-10 flex-wrap">
+      <div className="w-full flex justify-center items-center gap-10 sm:gap-5 flex-wrap">
         <HomeButton
           active={activeFilter === "General Questions"}
           onClick={() => handleFilter("General Questions")}
