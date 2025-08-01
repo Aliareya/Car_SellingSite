@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 
 function ProductCart({car}) {
   return (
-    <div className="relative w-2/6 md:w-full sm:w-full flex flex-col md:flex-row h-auto shadow-lg md:border border-gray-200 pb-7 md:pb-0 rounded-lg">
+    <div className="fade-in relative w-2/6 md:w-full sm:w-full flex flex-col md:flex-row h-auto shadow-lg md:border border-gray-200 pb-7 md:pb-0 rounded-lg">
       <div className="w-full md:w-[60%] h-64 md-72 relative overflow-hidden rounded-t-lg md:rounded-bl-lg md:rounded-tr-none shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
         <div
           className="bg-center bg-cover w-full h-64 md:72 transition-transform duration-500 ease-in-out transform hover:scale-110"

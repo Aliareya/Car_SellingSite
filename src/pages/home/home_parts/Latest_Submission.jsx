@@ -1,70 +1,68 @@
-import React from "react";
-import { Icon } from "@iconify/react";
+import React, { useState, useEffect } from "react";
 import ProductCart from "../../../components/product/ProductCart";
-import car3 from "../../../assets/product/car1.jpg";
-import car2 from "../../../assets/product/car2.jpg";
-import car1 from "../../../assets/product/car3.jpg";
 import HomeButton from "../../../utils/HomeButton";
-
-
-// cars data
-const carListings = [
-  {
-    name: "Mercedes-Benz",
-    listedBy: "Car House",
-    engine: "120cc",
-    transmission: "Manual",
-    fuel: "Petrol",
-    year: 2018,
-    type: "car",
-    price: "$174,900",
-    image: car1
-  },
-  {
-    name: "Mazda MX Miata",
-    listedBy: "Car House",
-    engine: "120cc",
-    transmission: "Manual",
-    fuel: "Petrol",
-    year: 2012,
-    type: "car",
-    price: "$140,900",
-    image: car2
-  },
-  {
-    name: "Camz Ferrari Portofino",
-    listedBy: "Car House",
-    engine: "120cc",
-    transmission: "Manual",
-    fuel: "Petrol",
-    year: 2010,
-    type: "car",
-    price: "$450,900",
-    image: car3
-  },
-];
-
+import { useStaticData } from "../../../context/StaticData";
 
 function Latest_Submission() {
+  const { carData } = useStaticData();
+  const [activeFilter, setActiveFilter] = useState("latest");
+  const [filteredCars, setFilteredCars] = useState([]);
+
+  const handleCarFilter = (type) => {
+    const filtered = carData.filter((car) => car.type === type);
+    setFilteredCars(filtered);
+    setActiveFilter(type);
+  };
+
+  useEffect(() => {
+    handleCarFilter(activeFilter);
+  }, []);
+
   return (
-    <div className="w-full h-auto pb-14 sm:pb-5 pt-14 sm:pt-10 ">
+    <div className="w-full h-auto pb-14 sm:pb-5 pt-14 sm:pt-10">
+      {/* Header */}
       <div className="flex flex-col items-center justify-center">
         <p className="text-xl font-bold text-red-700 pb-3">Latest Submission</p>
-        <h2 className="text-3xl font-bold sm:text-center  mb-4">
+        <h2 className="text-3xl font-bold sm:text-center mb-4">
           Find the Best Deals For You
         </h2>
       </div>
 
-      <div className="w-full flex justify-center sm:justify-center items-center gap-10 sm:gap-y-4  flex-wrap ">
-        <HomeButton title={"Latest Car"} Icon={''}/>
-        <HomeButton title={"Featured"} Icon={''}/>
-        <HomeButton title={"Popular"} Icon={''}/>
+      {/* Filter Buttons */}
+      <div className="w-full flex justify-center items-center gap-10 sm:gap-y-4 flex-wrap">
+        <HomeButton
+          title={"Latest Car"}
+          Icon={""}
+          onClick={() => handleCarFilter("latest")}
+          active={activeFilter === "latest"}
+        />
+        <HomeButton
+          title={"Featured"}
+          Icon={""}
+          onClick={() => handleCarFilter("featured")}
+          active={activeFilter === "featured"}
+        />
+        <HomeButton
+          title={"Popular"}
+          Icon={""}
+          onClick={() => handleCarFilter("popular")}
+          active={activeFilter === "popular"}
+        />
       </div>
 
+      {/* Filtered Cars with fade-in animation */}
       <div className="w-full h-auto mt-10 flex md:flex-col sm:flex-col justify-between items-center gap-4">
-        {carListings.map((car, index) => {
-          return <ProductCart key={index} car={car} />;
-        })}
+        {filteredCars?.length > 0 ? (
+          filteredCars.map((car, index) => (
+            // <div key={car.name + index} className="fade-in w-full">
+              <ProductCart car={car} />
+            // </div>
+          ))
+        ) : (
+          <p className="fade-in text-gray-500 text-center w-full">
+            No cars found in this category.
+          </p>
+        )}
       </div>
     </div>
   );

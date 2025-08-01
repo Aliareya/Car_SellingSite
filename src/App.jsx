@@ -1,6 +1,7 @@
 import AppRoutes from "./routes/AppRoutes";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import { StaticDataProvider } from "./context/StaticData";
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
       />
 
       {/* Main Componenet on site */}
-      <AppRoutes />
+      <StaticDataProvider>
+        <AppRoutes />
+      </StaticDataProvider>
     </div>
   );
 }
