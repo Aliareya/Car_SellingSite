@@ -44,7 +44,7 @@ function BrowseTopCar() {
       <div className='w-full flex justify-center sm:justify-between items-center gap-10 sm:gap-2 flex-wrap pt-5'>
         {carBrands.map((brand, index) => {
           return  (
-            <HomeButton title={brand.title} icon={brand.icon}/>
+            <HomeButton key={index} title={brand.title} icon={brand.icon}/>
           )
         })} 
       </div>
