@@ -20,7 +20,7 @@ function HomeBanner({ banner_bg }) {
         setCarIndex((prev) => (prev + 1) % carImages.length);
         setFade(true);
       }, 500);
-    }, 10000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
