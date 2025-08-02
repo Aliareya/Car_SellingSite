@@ -18,7 +18,7 @@ function Product({car , sty}) {
           <Icon icon="uis:compress" width="24" height="24"  style={{color: '#c20f2f'}} />
         </span>
         <span className={`${sty === "list" ?"top-1 right-1 px-2 py-1 text-sm":"top-60 right-3 px-3 py-1.5 text-base"} absolute  bg-red-700 hover:bg-black text-white  rounded-md   font-semibold`}>
-          {car.price}
+          {"$"+car.price}
         </span>
       <div className={`${sty === "list" ?"pt-12 sm:pt-3":"pt-5"} w-full px-4 flex flex-col items-start justify-start gap-2`}>
         <h1 className={`${sty === "list" ?"sm:text-sm":""} text-2xl fonr-bold sm:text-lg `}>{car.name}</h1>

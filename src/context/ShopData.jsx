@@ -8,7 +8,7 @@ export const ShopDataProvider = ({ children }) => {
   const brands = ["benz","tesla","ford","tesla","toyota","nissan","bmw"];
   const category = ["luxury","sports","electric","hybrid","sedan","suv","hatchback","convertible"];
   const price = ["0-2000", "2000-5000", "5000-70000", "70000-20000", "20000+"];
-  const sortOptions = ["Default","Price: Low to High","Price: High to Low","Newest","Oldest"];
+  const sortOptions = ["Default","Low to High","High to Low"];
 
 
 

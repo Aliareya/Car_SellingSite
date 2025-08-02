@@ -1,36 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import Search from "../../../utils/Search";
 import FilterCart from "./FilterCart";
 import { useShopData } from "../../../context/ShopData";
-import { useState } from "react";
 
+function Sidebar({ FiletrProducts }) {
+  const { year, category, color, brands, price } = useShopData();
 
-function Sidebar({setproductFilter ,productFilter}) {
-  const { year, category, color, brands, price } = useShopData();;
-  
   const [selectedMakes, setSelectedMakes] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedYears, setSelectedYears] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectPrice, setSelectPrice] = useState([]);
-  
-  const handleMakeChange = (selected) => setSelectedMakes(selected);
-  const handleColorChange = (selected) => setSelectedColors(selected);
-  const handleYearChange = (selected) => setSelectedYears(selected);
-  const handleCategoryChange = (selected) => setSelectedCategories(selected);
-  const handlePriceChange = (selected) => setSelectPrice(selected);
-  
-  const handleSearchChange = (event) => {
-    console.log("Search:", event.target.value);
+  const [searchQuery, setSearchQuery] = useState(""); 
+
+  //  Triggered on typing in search box
+  const handleSearchChange = (value) => {
+    setSearchQuery(value);
+    FiletrProducts({
+      make: selectedMakes,
+      colors: selectedColors,
+      years: selectedYears,
+      categories: selectedCategories,
+      price: selectPrice,
+      search: value,
+    });
   };
- 
-  const FiletrProducts = () => {
-    setproductFilter({
-      "make" : selectedMakes ,
-      "colors:": selectedColors,
-      "years:" : selectedYears ,
-      "categories:": selectedCategories,
-      "price": selectPrice
+
+  // Triggered when "Filter Result" button is clicked
+  const handleFilterClick = () => {
+    FiletrProducts({
+      make: selectedMakes,
+      colors: selectedColors,
+      years: selectedYears,
+      categories: selectedCategories,
+      price: selectPrice,
+      search: searchQuery,
     });
   };
 
@@ -44,41 +48,42 @@ function Sidebar({setproductFilter ,productFilter}) {
 
         <div className="w-full h-auto pb-5 flex flex-col gap-1 mt-5">
           <FilterCart
-            filtername={"Make"}
+            filtername="Make"
             options={brands}
             selectedOptions={selectedMakes}
-            onSelectionChange={handleMakeChange}
+            onSelectionChange={setSelectedMakes}
           />
           <FilterCart
-            filtername={"Price"}
+            filtername="Price"
             options={price}
             selectedOptions={selectPrice}
-            onSelectionChange={handlePriceChange}
+            onSelectionChange={setSelectPrice}
           />
           <FilterCart
-            filtername={"Color"}
+            filtername="Color"
             options={color}
             selectedOptions={selectedColors}
-            onSelectionChange={handleColorChange}
+            onSelectionChange={setSelectedColors}
           />
           <FilterCart
-            filtername={"Year"}
+            filtername="Year"
             options={year}
             selectedOptions={selectedYears}
-            onSelectionChange={handleYearChange}
+            onSelectionChange={setSelectedYears}
           />
           <FilterCart
-            filtername={"Category"}
+            filtername="Category"
             options={category}
             selectedOptions={selectedCategories}
-            onSelectionChange={handleCategoryChange}
+            onSelectionChange={setSelectedCategories}
           />
+
           <div className="w-full h-10 flex items-center justify-center mt-5">
             <button
-              onClick={FiletrProducts}
-              className="hover:bg-red-700  w-full h-full text-white bg-black rounded-lg"
+              onClick={handleFilterClick}
+              className="hover:bg-red-700 w-full h-full text-white bg-black rounded-lg"
             >
-              Filter Resulte
+              Filter Result
             </button>
           </div>
         </div>
