@@ -2,6 +2,7 @@ import AppRoutes from "./routes/AppRoutes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { StaticDataProvider } from "./context/StaticData";
+import { ShopDataProvider } from "./context/ShopData";
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
 
       {/* Main Componenet on site */}
       <StaticDataProvider>
-        <AppRoutes />
+        <ShopDataProvider>
+          <AppRoutes />
+        </ShopDataProvider>
       </StaticDataProvider>
     </div>
   );
