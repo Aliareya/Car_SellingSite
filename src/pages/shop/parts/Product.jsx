@@ -1,6 +1,8 @@
 import { Icon } from "@iconify/react";
+import { useNavigate } from "react-router-dom";
 
 function Product({car , sty}) {
+  const navigate = useNavigate();
   return (
     <div className={`${sty === "list" ? "flex-row pb-0 border border-gray-200 ":" flex-col pb-7"} relative w-full  sm:w-full flex  h-auto shadow-lg rounded-lg`}>
       <div className={`${sty === "list" ? "w-[80%] sm:w-[50%] h-64 sm:h-24 rounded-bl-lg rounded-tl-lg rounded-tr-none" : "w-full h-64 rounded-t-lg"} relative overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out`}>
@@ -21,7 +23,7 @@ function Product({car , sty}) {
           {"$"+car.price}
         </span>
       <div className={`${sty === "list" ?"pt-12 sm:pt-3":"pt-5"} w-full px-4 flex flex-col items-start justify-start gap-2`}>
-        <h1 className={`${sty === "list" ?"sm:text-sm":""} text-2xl fonr-bold sm:text-lg `}>{car.name}</h1>
+        <h1 onClick={()=>navigate(`/product/${car.id}`)} className={`${sty === "list" ?"sm:text-sm":""} text-2xl fonr-bold cursor-pointer hover:text-red-700 sm:text-lg `}>{car.name}</h1>
         <span className={`${sty === "list" ? "sm:hidden" :"" } text-sm font-normal `}><b>Listed by:</b> {car.listedBy}</span>
         <hr className={`${sty === "list" ? "sm:hidden" :"" } w-full h-1  border-gray-400 mt-1`} />
       </div>
@@ -41,7 +43,7 @@ function Product({car , sty}) {
           <span className="text-sm font-normal">{car.fuel}</span>
         </div>
       </div>
-        <div className="w-full flex px-4 pt-5 sm:pt-2 justify-center items-center gap-2">
+        <div onClick={()=>navigate(`/product/${car.id}`)} className="w-full flex px-4 pt-5 sm:pt-2 justify-center items-center gap-2">
           <button className="w-full h-10 hover:bg-red-700 border border-gray-300 hover:text-white rounded-lg" >View Details</button>
         </div>
       </div>

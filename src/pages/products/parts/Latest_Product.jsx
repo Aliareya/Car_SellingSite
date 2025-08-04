@@ -16,7 +16,7 @@ function Latest_Product({product}) {
           <Icon icon="ic:round-star" width="17" height="17"  style={{color: '#e17c24'}} />
           <Icon icon="ic:round-star" width="17" height="17"  style={{color: '#e17c24'}} />
         </div>
-        <h1 className='text-sm font-bold hover:text-red-700 cursor-pointer'>{product.name}</h1>
+        <h1 className='text-sm md:text-[12px] font-bold hover:text-red-700 cursor-pointer'>{product.name}</h1>
         <div className='flex gap-4'>
           <del className='text-sm text-red-600'>{product.originalPrice}</del>
           <span className='text-sm'>{product.price}</span>

@@ -327,7 +327,7 @@ const latest_products = [
     image:car2
   },
   {
-    name: "Aluminium Wheel AR-19",
+    name: "Aluminium Wheel AR",
     price: "$700",
     originalPrice: "$780.00",
     status: "not found",
@@ -357,7 +357,7 @@ const recently_viewed = [
     image:car5
   },
   {
-    name: "Aluminium Wheel AR-19",
+    name: "Aluminium Wheel AR",
     price: "$700",
     originalPrice: "$780.00",
     status: "not found",
