@@ -1,8 +1,27 @@
 import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
+import { useWishlist } from "../../../context/WishlistContext";
+import { toast } from "react-toastify";
+import { useStaticData } from "../../../context/StaticData";
 
 function Product({car , sty}) {
+  const {setWishlistCar ,WishlistCar} = useWishlist();
+  const isFavoritecar = WishlistCar.filter((item)=>item.id === car.id)
+  const favorite = isFavoritecar && isFavoritecar?.length > 0 ? true : false;
+
   const navigate = useNavigate();
+
+  const addTowishlist = (id , name) =>{
+    // check if this car is in wishlist or not
+    const isExist  = WishlistCar.filter((item)=>item.id == id);
+    if(isExist && isExist.length > 0){
+      toast.info(`${name} is already exist in wishlist`)
+    }else{ 
+      setWishlistCar([...WishlistCar , car]);
+      toast.success(`${car.name} Successfully Added.`)
+    }
+  }
+
   return (
     <div className={`${sty === "list" ? "flex-row pb-0 border border-gray-200 ":" flex-col pb-7"} relative w-full  sm:w-full flex  h-auto shadow-lg rounded-lg`}>
       <div className={`${sty === "list" ? "w-[80%] sm:w-[50%] h-64 sm:h-24 rounded-bl-lg rounded-tl-lg rounded-tr-none" : "w-full h-64 rounded-t-lg"} relative overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out`}>
@@ -12,9 +31,10 @@ function Product({car , sty}) {
         />
       </div>
       <div className="w-full">
-        <span className={`${sty === "list" ? "right-[33rem] md:right-[29rem] sm:hidden":"right-3"} absolute top-3 bg-slate-100 px-2 py-1 rounded-md text-sm font-semibold`}>{car.year}</span>
-        <span className={`${sty === "list" ?"sm:left-14":""} absolute top-3 left-16 bg-slate-100 px-2 py-1 rounded-md  text-sm font-semibold`}>
-          <Icon icon="solar:heart-bold-duotone" width="24" height="24"  style={{color:' #c20f2f'}} />
+        <span className={`${sty === "list" ? "right-[33rem]  md:right-[29rem] sm:hidden":"right-3"} absolute top-3 bg-slate-100 px-2 py-1 rounded-md text-sm font-semibold`}>{car.year}</span>
+        <span onClick={()=>addTowishlist(car.id , car.name)}
+          className={`${sty === "list" ?"sm:left-14":""} cursor-pointer absolute top-3 left-16 bg-slate-100 px-2 py-1 rounded-md  text-sm font-semibold`}>
+          <Icon icon="si:heart-fill" width="24" height="24"  style={{color:favorite ? "#7f1d1d" :" #e17c24"}} />
         </span>
         <span className={`${sty === "list" ?"sm:left-1":""} absolute top-3 left-3 bg-slate-100 px-2 py-1 rounded-md  text-sm font-semibold`}>
           <Icon icon="uis:compress" width="24" height="24"  style={{color: '#c20f2f'}} />

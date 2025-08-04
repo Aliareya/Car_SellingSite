@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { StaticDataProvider } from "./context/StaticData";
 import { ShopDataProvider } from "./context/ShopData";
+import { WishlistProvider } from "./context/WishlistContext";
 
 function App() {
   return (
@@ -17,16 +18,18 @@ function App() {
         rtl={false}
         theme="dark"
         toastClassName={() =>
-          "relative flex p-4 rounded-lg bg-zinc-800 text-white shadow-xl border border-gray-500"
+          "relative mt-5 flex p-4 rounded-lg bg-zinc-800 text-white shadow-xl border border-gray-500"
         }
-        bodyClassName={() => "text-sm font-medium"}
+        bodyClassName={() => "text-sm font-medium "}
       />
 
       {/* Main Componenet on site */}
       <StaticDataProvider>
-        <ShopDataProvider>
-          <AppRoutes />
-        </ShopDataProvider>
+        <WishlistProvider>
+          <ShopDataProvider>
+            <AppRoutes />
+          </ShopDataProvider>
+        </WishlistProvider>
       </StaticDataProvider>
     </div>
   );
