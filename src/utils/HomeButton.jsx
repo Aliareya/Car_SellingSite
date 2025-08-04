@@ -11,7 +11,7 @@ function HomeButton({ icon, title, onClick, active }) {
     >
       <Icon
         className="z-10"
-        icon={icon}
+        icon={icon || undefined}
         width="24"
         height="24"
         style={{ color: active ? "#fff" : "#000" }}

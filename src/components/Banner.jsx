@@ -1,11 +1,19 @@
 import bg from "../assets/images/texture-bg.png";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import HomeBanner from "./HomeBanner";
+import { useStaticData } from "../context/StaticData";
+import { number } from "framer-motion";
 
 function Banner() {
+  const {cars} = useStaticData();
   const location = useLocation().pathname;
   const isHomePage = location === "/";
   const banner_bg = bg;
+  const {id} = useParams();
+
+  const Product = cars.filter((car)=>car.id === Number(id));
+  const Product_Name = Product[0]?.name || "No Products";
+
   
   const bannertitle = [
     { title: "Shop", path: "/shop", desc: "Browse our wide selection of high-quality cars and auto accessories." },
@@ -15,6 +23,11 @@ function Banner() {
     { title: "Wishlist", path: "/wishlist", desc: "Save your favorite products and come back to them anytime." },
     { title: "Contact Us", path: "/contact", desc: "Have questions? Reach out to our support team today." },
     { title: "Not Found", path: "*", desc: "Oops! The page you're looking for doesn't exist." },
+    { title: `${Product_Name}`, path: `/product/${id}`, desc: (
+    <>
+      See more details about <span style={{ color: 'red' }}>{Product_Name}</span> to explore its features, pricing, and customer reviews.
+    </>
+  ) },
   ];
 
 

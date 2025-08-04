@@ -155,6 +155,7 @@ const carData = [
 
 const cars = [
   {
+    id:1,
     name: "Mercedes-Benz",
     listedBy: "Car House",
     engine: "120cc",
@@ -169,6 +170,7 @@ const cars = [
     image: car1,
   },
   {
+    id:2,
     name: "Tesla Model S",
     listedBy: "EV Motors",
     engine: "Electric",
@@ -183,6 +185,7 @@ const cars = [
     image: car2,
   },
   {
+    id:3,
     name: "Ford Mustang",
     listedBy: "AutoKing",
     engine: "500cc",
@@ -197,6 +200,7 @@ const cars = [
     image: car3,
   },
   {
+    id:4,
     name: "Toyota Prius",
     listedBy: "Hybrid World",
     engine: "180cc",
@@ -215,6 +219,7 @@ const cars = [
     listedBy: "Eco Cars",
     engine: "Electric",
     transmission: "Automatic",
+    id:5,
     fuel: "Electric",
     year: 2019,
     color: "white",
@@ -225,6 +230,7 @@ const cars = [
     image: car5,
   },
   {
+    id:6,
     name: "BMW X5",
     listedBy: "Luxury Autos",
     engine: "350cc",
@@ -240,6 +246,8 @@ const cars = [
   },
   {
     name: "Tesla Roadster",
+    id:7,
+    id:7,
     listedBy: "Tesla Store",
     engine: "Electric",
     transmission: "Automatic",
@@ -253,6 +261,7 @@ const cars = [
     image: car7,
   },
   {
+    id:8,
     name: "Honda Civic",
     listedBy: "Car House",
     engine: "160cc",
@@ -268,6 +277,7 @@ const cars = [
   },
   {
     name: "Toyota Yaris",
+    id:9,
     listedBy: "City Cars",
     engine: "130cc",
     transmission: "Manual",
@@ -284,6 +294,7 @@ const cars = [
     name: "BMW Z4",
     listedBy: "Convertible World",
     engine: "300cc",
+    id:10,
     transmission: "Automatic",
     fuel: "Petrol",
     year: 2023,

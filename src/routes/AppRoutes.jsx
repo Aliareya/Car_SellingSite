@@ -10,6 +10,7 @@ import Contact from "../pages/contact/Contact";
 import Services from "../pages/services/Services";
 import Newcar from "../pages/newcar/Newcar";
 import Wishlist from "../pages/wishlist/Wishlist";
+import ProductDetails from "../pages/products/ProductDetails";
 import Notfound from "../pages/Notfound";
 
 function AppRoutes() {
@@ -22,6 +23,7 @@ function AppRoutes() {
         <Route path="/cart" element={<Cart/>} />
         <Route path="/new" element={<Newcar/>} />
         <Route path="/wishlist" element={<Wishlist/>} />
+        <Route path="/product/:id" element={<ProductDetails/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="*" element={<Notfound/>} />
       </Route>

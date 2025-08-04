@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 function Product({car , sty}) {
   return (
     <div className={`${sty === "list" ? "flex-row pb-0 border border-gray-200 ":" flex-col pb-7"} relative w-full  sm:w-full flex  h-auto shadow-lg rounded-lg`}>
-      <div className={`${sty === "list" ? "w-[60%] sm:w-[50%] h-64 sm:h-24 rounded-bl-lg rounded-tl-lg rounded-tr-none" : "w-full h-64 rounded-t-lg"} relative overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out`}>
+      <div className={`${sty === "list" ? "w-[80%] sm:w-[50%] h-64 sm:h-24 rounded-bl-lg rounded-tl-lg rounded-tr-none" : "w-full h-64 rounded-t-lg"} relative overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out`}>
         <div
           className={`${sty === "list" ? "h-72 sm:h-24" :"h-64"} bg-center bg-cover w-full transition-transform duration-500 ease-in-out transform hover:scale-110`}
           style={{ backgroundImage: `url(${car.image})`,}}
