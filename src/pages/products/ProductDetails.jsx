@@ -102,7 +102,7 @@ function ProductDetails() {
             <button onClick={()=>setViewINFO("description")} className='px-5 py-3 bg-slate-100 rounded-lg'>Description</button>
             <button onClick={()=>setViewINFO("specification")} className='px-5 py-3 bg-slate-100 rounded-lg'>Specification</button>
           </div>
-          <div className='w-full my-5 pb-10 bg-white px-5 rounded-md'>
+          <div className='w-full my-5 pb-10 bg-white px-5  rounded-md'>
             {viewINFO === "description" && (
               <Product_Description/>
             )}
@@ -111,7 +111,7 @@ function ProductDetails() {
             )}
           </div>
         </div>
-        <div className='w-[25%] md:w-[35%] h-auto flex flex-col gap-3'>
+        <div className='w-[25%] md:w-[35%] sm:w-full h-auto flex flex-col gap-3'>
           <div className='w-full bg-white rounded-md pb-3'>
             <div className='w-full h-14 border-b border-gray-200 flex items-center pl-3'>
               <h1 className='text-base font-bold'>Latest Produtc</h1>

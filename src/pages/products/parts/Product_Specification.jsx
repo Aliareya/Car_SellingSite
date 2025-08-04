@@ -28,7 +28,7 @@ function Product_Specification() {
     <div className='w-full mt-5 flex gap-3 flex-wrap '>
       {carSpecs.map((car , index)=>{
         return(
-          <div key={index} className='w-44 h-14 p-2 rounded-md bg-slate-50 flex gap-3 items-center'>
+          <div key={index} className='w-44 sm:w-full h-14 p-2 rounded-md  bg-slate-50 flex gap-3 items-center'>
             <span className='w-10 h-10 rounded-lg border border-gray-200 flex justify-center items-center'>
               <Icon icon={car.icon} width="30" height="30"  style={{color: '#b91c1c'}} />
             </span>
