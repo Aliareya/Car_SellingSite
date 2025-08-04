@@ -44,6 +44,7 @@ import car6 from "../assets/product/car6.jpg";
 import car7 from "../assets/product/car7.jpg";
 import car8 from "../assets/product/car3.jpg";
 import car9 from "../assets/product/car5.jpg";
+import { image } from "framer-motion/client";
 
 const carData = [
   // Latest
@@ -168,6 +169,7 @@ const cars = [
     type: "latest",
     price: 174900,
     image: car1,
+    relatet_img : [car2,car3,car4]
   },
   {
     id:2,
@@ -183,6 +185,7 @@ const cars = [
     type: "latest",
     price: 89000,
     image: car2,
+    relatet_img : [car3,car1,car4]
   },
   {
     id:3,
@@ -198,6 +201,7 @@ const cars = [
     type: "latest",
     price: 50000,
     image: car3,
+    relatet_img : [car4,car1,car2]
   },
   {
     id:4,
@@ -213,6 +217,7 @@ const cars = [
     type: "latest",
     price: 27000,
     image: car4,
+    relatet_img : [car5,car1,car2]
   },
   {
     name: "Nissan Leaf",
@@ -228,6 +233,7 @@ const cars = [
     type: "latest",
     price: 31000,
     image: car5,
+    relatet_img : [car7,car4,car3]
   },
   {
     id:6,
@@ -243,6 +249,7 @@ const cars = [
     type: "latest",
     price: 67500,
     image: car6,
+    relatet_img : [car5,car2,car3]
   },
   {
     name: "Tesla Roadster",
@@ -259,6 +266,7 @@ const cars = [
     type: "latest",
     price: 200000,
     image: car7,
+    relatet_img : [car3,car5,car8]
   },
   {
     id:8,
@@ -274,6 +282,7 @@ const cars = [
     type: "latest",
     price: 19500,
     image: car8,
+    relatet_img : [car1,car3,car5]
   },
   {
     name: "Toyota Yaris",
@@ -289,6 +298,7 @@ const cars = [
     type: "latest",
     price: 14000,
     image: car9,
+    relatet_img : [car7,car4,car2]
   },
   {
     name: "BMW Z4",
@@ -304,6 +314,61 @@ const cars = [
     type: "latest",
     price: 76000,
     image: car3,
+    relatet_img : [car9,car8,car4]
+  },
+];
+
+const latest_products = [
+  {
+    name: "Car AirFilter Spare ",
+    price: "$700",
+    originalPrice: "$780.00",
+    status: "not found",
+    image:car2
+  },
+  {
+    name: "Aluminium Wheel AR-19",
+    price: "$700",
+    originalPrice: "$780.00",
+    status: "not found",
+    image:car4
+  },
+  {
+    name: "Car Exhaust system ",
+    price: "$700",
+    originalPrice: "$780.00",
+    status: "available" ,
+    image:car6
+  },
+  {
+    name: "Car Exhaust ",
+    price: "$700",
+    originalPrice: "$780.00",
+    status: "available" ,
+    image:car7
+  },
+];
+const recently_viewed = [
+  {
+    name: "Car AirFilter Spare ",
+    price: "$700",
+    originalPrice: "$780.00",
+    status: "not found",
+    image:car5
+  },
+  {
+    name: "Aluminium Wheel AR-19",
+    price: "$700",
+    originalPrice: "$780.00",
+    status: "not found",
+    image:car3
+  },
+  {
+    name: "Car Exhaust system ",
+    price: "$700",
+    originalPrice: "$780.00",
+    status: "available" ,
+    image : car1
   },
 ];
 
@@ -312,7 +377,7 @@ const cars = [
 
 export const StaticDataProvider = ({ children }) => {
   return (
-    <StaticDataContext.Provider value={{questionsData , carData , cars}}>
+    <StaticDataContext.Provider value={{questionsData , carData , cars , latest_products ,recently_viewed}}>
       {children}
     </StaticDataContext.Provider>
   );
