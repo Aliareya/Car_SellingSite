@@ -23,6 +23,7 @@ function Banner() {
     { title: "Wishlist", path: "/wishlist", desc: "Save your favorite products and come back to them anytime." },
     { title: "Contact Us", path: "/contact", desc: "Have questions? Reach out to our support team today." },
     { title: "Not Found", path: "*", desc: "Oops! The page you're looking for doesn't exist." },
+    { title: "Chickout", path: "/checkout", desc: "Process your Payment Here" },
     { title: `${Product_Name}`, path: `/product/${id}`, desc: (
     <>
       See more details about <span style={{ color: 'red' }}>{Product_Name}</span> to explore its features, pricing, and customer reviews.

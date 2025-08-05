@@ -22,10 +22,19 @@ function Product({car , sty}) {
       toast.success(`${car.name} Successfully Added.`)
     }
   }
+  const inCart = cart.filter((item)=>item.id === car.id);
+  const ExistinCart = inCart && inCart.length > 0 ? true : false;
 
   const handleAddToCart = (id , name) =>{
-    setCart([...cart , car])
+    const existCart = cart.filter((item)=>item.id === id);
+    if(existCart && existCart.length > 0){
+      toast.info(`${name} is already exist in Cart`)
+    }else{
+      setCart([...cart , car])
+      toast.success(`${name} Successfully Added To Cart`)
+    }
   }
+
 
   return (
     <div className={`${sty === "list" ? "flex-row pb-0 border border-gray-200 ":" flex-col pb-7"} relative w-full  sm:w-full flex  h-auto shadow-lg rounded-lg`}>
@@ -43,7 +52,7 @@ function Product({car , sty}) {
         </span>
         <span onClick={()=>handleAddToCart(car.id, car.name)}
           className={`${sty === "list" ?"sm:left-1":""} absolute cursor-pointer top-3 left-3 bg-slate-100 px-2 py-1 rounded-md  text-sm font-semibold`}>
-          <Icon icon="mdi:cart" width="24" height="24"  style={{color: '#000'}} />
+          <Icon icon="mdi:cart" width="24" height="24"  style={{color:ExistinCart ? "#7f1d1d" :" #000"}} />
         </span>
         <span className={`${sty === "list" ?"top-1 right-1 px-2 py-1 text-sm":"top-60 right-3 px-3 py-1.5 text-base"} absolute  bg-red-700 hover:bg-black text-white  rounded-md   font-semibold`}>
           {"$"+car.price}

@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Row_Cart({ car, onRemove, onToggleSelect, isSelected }) {
-  const [quantity, setQuantity] = useState(1);
-
-  const handleIncrease = () => setQuantity((prev) => prev + 1);
-  const handleDecrease = () => {
-    if (quantity > 1) setQuantity((prev) => prev - 1);
-  };
-
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat("en-US", {
+function Row_Cart({
+  car,
+  quantity,
+  onQuantityChange,
+  onRemove,
+  onToggleSelect,
+  isSelected,
+}) {
+  const formatPrice = (price) =>
+    new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
     }).format(price);
-  };
 
   return (
     <div className="w-full flex items-center border-b border-gray-300">
@@ -49,7 +48,7 @@ function Row_Cart({ car, onRemove, onToggleSelect, isSelected }) {
       <div className="w-[200px] px-4 py-3 flex justify-center">
         <div className="flex items-center border rounded overflow-hidden">
           <button
-            onClick={handleDecrease}
+            onClick={() => onQuantityChange(quantity - 1)}
             disabled={quantity === 1}
             className={`px-3 py-1 text-lg font-semibold ${
               quantity === 1
@@ -66,7 +65,7 @@ function Row_Cart({ car, onRemove, onToggleSelect, isSelected }) {
             className="w-[50px] text-center border-l border-r outline-none"
           />
           <button
-            onClick={handleIncrease}
+            onClick={() => onQuantityChange(quantity + 1)}
             className="px-3 py-1 text-lg font-semibold bg-gray-100 hover:bg-gray-200"
           >
             +

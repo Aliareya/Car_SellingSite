@@ -12,6 +12,7 @@ import Newcar from "../pages/newcar/Newcar";
 import Wishlist from "../pages/wishlist/Wishlist";
 import ProductDetails from "../pages/products/ProductDetails";
 import Notfound from "../pages/Notfound";
+import Checkout from "../pages/checkout/Checkout";
 
 function AppRoutes() {
   return (
@@ -25,6 +26,7 @@ function AppRoutes() {
         <Route path="/wishlist" element={<Wishlist/>} />
         <Route path="/product/:id" element={<ProductDetails/>} />
         <Route path="/contact" element={<Contact/>} />
+        <Route path="/checkout" element={<Checkout/>} />
         <Route path="*" element={<Notfound/>} />
       </Route>
     </Routes>
