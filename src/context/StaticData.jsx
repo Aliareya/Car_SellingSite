@@ -45,7 +45,13 @@ import car6 from "../assets/product/car6.jpg";
 import car7 from "../assets/product/car7.jpg";
 import car8 from "../assets/product/car3.jpg";
 import car9 from "../assets/product/car5.jpg";
-import { image } from "framer-motion/client";
+
+// import services image
+import service_1 from "../assets/services/service-1.jpg";
+import service_2 from "../assets/services/service-2.jpg";
+import service_3 from "../assets/services/service-3.jpg";
+import service_4 from "../assets/services/service-4.jpg";
+import service_5 from "../assets/services/service-5.jpg";
 
 const carData = [
   // Latest
@@ -209,7 +215,14 @@ const recently_viewed = [
   },
 ];
 
-
+const services = [
+  { title: "Electric Auto"  , image :service_1},
+  { title: "Rent Vehicle" , image :service_2},
+  { title: "Air Conditioning", image :service_3 },
+  { title: "Break Service", image :service_4 },
+  { title: "Tire & Auto Parts" , image :service_5},
+  { title: "Rent Vehicle" , image :service_1},
+];
 
 
 export const StaticDataProvider = ({ children }) => {
@@ -385,10 +398,10 @@ export const StaticDataProvider = ({ children }) => {
     isFavorite : false,
     relatet_img : [car9,car8,car4]
   },
-]);
+  ]);
   
   return (
-    <StaticDataContext.Provider value={{questionsData , carData , cars ,setCars, latest_products ,recently_viewed}}>
+    <StaticDataContext.Provider value={{services, questionsData , carData , cars ,setCars, latest_products ,recently_viewed}}>
       {children}
     </StaticDataContext.Provider>
   );
