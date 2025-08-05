@@ -2,10 +2,11 @@ import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
 import { useWishlist } from "../../../context/WishlistContext";
 import { toast } from "react-toastify";
-import { useStaticData } from "../../../context/StaticData";
+import { useCart } from "../../../context/CartContext";
 
 function Product({car , sty}) {
   const {setWishlistCar ,WishlistCar} = useWishlist();
+  const {cart , setCart} = useCart();
   const isFavoritecar = WishlistCar.filter((item)=>item.id === car.id)
   const favorite = isFavoritecar && isFavoritecar?.length > 0 ? true : false;
 
@@ -22,6 +23,10 @@ function Product({car , sty}) {
     }
   }
 
+  const handleAddToCart = (id , name) =>{
+    setCart([...cart , car])
+  }
+
   return (
     <div className={`${sty === "list" ? "flex-row pb-0 border border-gray-200 ":" flex-col pb-7"} relative w-full  sm:w-full flex  h-auto shadow-lg rounded-lg`}>
       <div className={`${sty === "list" ? "w-[80%] sm:w-[50%] h-64 sm:h-24 rounded-bl-lg rounded-tl-lg rounded-tr-none" : "w-full h-64 rounded-t-lg"} relative overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out`}>
@@ -36,8 +41,9 @@ function Product({car , sty}) {
           className={`${sty === "list" ?"sm:left-14":""} cursor-pointer absolute top-3 left-16 bg-slate-100 px-2 py-1 rounded-md  text-sm font-semibold`}>
           <Icon icon="si:heart-fill" width="24" height="24"  style={{color:favorite ? "#7f1d1d" :" #e17c24"}} />
         </span>
-        <span className={`${sty === "list" ?"sm:left-1":""} absolute top-3 left-3 bg-slate-100 px-2 py-1 rounded-md  text-sm font-semibold`}>
-          <Icon icon="uis:compress" width="24" height="24"  style={{color: '#c20f2f'}} />
+        <span onClick={()=>handleAddToCart(car.id, car.name)}
+          className={`${sty === "list" ?"sm:left-1":""} absolute cursor-pointer top-3 left-3 bg-slate-100 px-2 py-1 rounded-md  text-sm font-semibold`}>
+          <Icon icon="mdi:cart" width="24" height="24"  style={{color: '#000'}} />
         </span>
         <span className={`${sty === "list" ?"top-1 right-1 px-2 py-1 text-sm":"top-60 right-3 px-3 py-1.5 text-base"} absolute  bg-red-700 hover:bg-black text-white  rounded-md   font-semibold`}>
           {"$"+car.price}

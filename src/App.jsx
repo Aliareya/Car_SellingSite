@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { StaticDataProvider } from "./context/StaticData";
 import { ShopDataProvider } from "./context/ShopData";
 import { WishlistProvider } from "./context/WishlistContext";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
@@ -25,11 +26,13 @@ function App() {
 
       {/* Main Componenet on site */}
       <StaticDataProvider>
-        <WishlistProvider>
-          <ShopDataProvider>
-            <AppRoutes />
-          </ShopDataProvider>
-        </WishlistProvider>
+        <CartProvider>
+          <WishlistProvider>
+            <ShopDataProvider>
+              <AppRoutes />
+            </ShopDataProvider>
+          </WishlistProvider>
+        </CartProvider>
       </StaticDataProvider>
     </div>
   );
