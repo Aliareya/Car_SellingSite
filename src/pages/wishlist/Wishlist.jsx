@@ -9,7 +9,7 @@ function Wishlist() {
   const {WishlistCar } = useWishlist();
 
   return (
-    <div className='w-full h-auto min-h-[200px] px-0 pb-10 xl:px-4 pt-5 rounded-t-md'>
+    <div className='w-full h-auto min-h-[500px] px-0 pb-10 xl:px-4 pt-5 rounded-t-md'>
       <div className='w-full h-auto bg-white rounded-md p-3'>
         <div className='w-full h-14 border-b flex border-gray-500 rounded-t-md'>
           <div className='w-[15%] sm:w-[30%] h-14 flex justify-start items-center pl-2'>Image</div>
