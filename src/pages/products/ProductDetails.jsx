@@ -6,13 +6,27 @@ import Product_Specification from './parts/Product_Specification';
 import Latest_Product from './parts/Latest_Product';
 import { useStaticData } from '../../context/StaticData';
 import { useParams } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
+import { toast } from 'react-toastify';
 
 function ProductDetails() {
+  const {cart , setCart} = useCart();
   const {id} = useParams();
   const {latest_products , recently_viewed , cars} = useStaticData();
   const productFilter = cars.filter((car)=>car.id === Number(id));
   const product_id = productFilter[0];
   const [viewINFO , setViewINFO] = useState("description")
+
+
+  const handleAddToCart = (id) =>{
+    const existCart = cart.filter((item)=>item.id === id);
+    if(existCart && existCart.length > 0){
+      toast.info(` is already exist in Cart`)
+    }else{
+      setCart([...cart , product_id])
+      toast.success(`Successfully Added To Cart`)
+    }
+  }
 
   return (
     <div className='w-full h-auto px-4 lg:px-0 md:px-0 sm:px-0 py-5 pt-10 sm:pt-5  '>
@@ -91,7 +105,7 @@ function ProductDetails() {
             </div>
             <div className='sm:absolute -bottom-5 w-40 h-10 mt-10 ml-4 sm:ml-0 bg-black flex gap-2 justify-center items-center rounded-lg cursor-pointer'>
               <Icon icon="prime:cart-plus" width="24" height="24"  style={{color: '#e17c24'}} />
-              <span className='text-white'>Add To Cart</span>
+              <span className='text-white' onClick={()=>handleAddToCart(product_id.id)}>Add To Cart</span>
             </div>
           </div> 
         </div>
