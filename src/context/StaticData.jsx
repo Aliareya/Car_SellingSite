@@ -56,6 +56,7 @@ import service_5 from "../assets/services/service-5.jpg";
 const carData = [
   // Latest
   {
+    id:1,
     name: "Mercedes-Benz",
     listedBy: "Car House",
     engine: "120cc",
@@ -67,6 +68,7 @@ const carData = [
     image: car1
   },
   {
+    id:2,
     name: "Toyota",
     listedBy: "Auto Plaza",
     engine: "130cc",
@@ -78,6 +80,7 @@ const carData = [
     image: car2
   },
   {
+    id:3,
     name: "Honda",
     listedBy: "City Cars",
     engine: "125cc",
@@ -88,9 +91,10 @@ const carData = [
     price: "$160,000",
     image: car3
   },
-
+  
   // Featured
   {
+    id:4,
     name: "BMW",
     listedBy: "Auto World",
     engine: "140cc",
@@ -103,6 +107,7 @@ const carData = [
   },
   {
     name: "Audi",
+    id:5,
     listedBy: "Speed Cars",
     engine: "135cc",
     transmission: "Manual",
@@ -113,6 +118,7 @@ const carData = [
     image: car5
   },
   {
+    id:6,
     name: "Mercedes-Benz",
     listedBy: "Car House",
     engine: "150cc",
@@ -126,6 +132,7 @@ const carData = [
 
   // Popular
   {
+    id:7,
     name: "Tesla",
     listedBy: "Electric Motors",
     engine: "Electric",
@@ -142,6 +149,7 @@ const carData = [
     engine: "145cc",
     transmission: "Manual",
     fuel: "Petrol",
+    id:8,
     year: 2016,
     type: "popular",
     price: "$220,000",
@@ -150,6 +158,7 @@ const carData = [
   {
     name: "Ford",
     listedBy: "Car Dealers",
+    id:9,
     engine: "160cc",
     transmission: "Automatic",
     fuel: "Diesel",

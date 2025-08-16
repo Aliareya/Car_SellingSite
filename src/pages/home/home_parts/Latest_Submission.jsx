@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import ProductCart from "../../../components/product/ProductCart";
 import HomeButton from "../../../utils/HomeButton";
 import { useStaticData } from "../../../context/StaticData";
+import { useNavigate } from "react-router-dom";
 
 function Latest_Submission() {
-  const { carData } = useStaticData();
+  const navigate = useNavigate();
+  const { carData  , cars} = useStaticData();
   const [activeFilter, setActiveFilter] = useState("latest");
   const [filteredCars, setFilteredCars] = useState([]);
 
@@ -55,7 +57,7 @@ function Latest_Submission() {
         {filteredCars?.length > 0 ? (
           filteredCars.map((car, index) => (
             // <div key={car.name + index} className="fade-in w-full">
-              <ProductCart car={car} />
+              <ProductCart key={index} car={car} />
             // </div>
           ))
         ) : (

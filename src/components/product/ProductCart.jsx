@@ -1,6 +1,8 @@
 import { Icon } from "@iconify/react";
+import { useNavigate } from "react-router-dom";
 
 function ProductCart({car}) {
+  const navigate = useNavigate();
   return (
     <div className="relative w-2/6 md:w-full sm:w-full flex flex-col md:flex-row h-auto shadow-lg md:border border-gray-200 pb-7 md:pb-0 rounded-lg">
       <div className="w-full md:w-[60%] h-64 md-72 relative overflow-hidden rounded-t-lg md:rounded-bl-lg md:rounded-tr-none shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
@@ -21,7 +23,7 @@ function ProductCart({car}) {
           {car.price}
         </span>
       <div className="w-full pt-5 md:pt-12 px-4 flex flex-col items-start justify-start gap-2">
-        <h1 className="text-2xl fonr-bold ">{car.name}</h1>
+        <h1 className="text-2xl fonr-bold cursor-pointer hover:text-red-700 " onClick={()=>navigate(`/product/${car.id}`)}>{car.name}</h1>
         <span className="text-sm font-normal "><b>Listed by:</b> {car.listedBy}</span>
         <hr className="w-full h-1 border-gray-400 mt-1" />
       </div>
@@ -41,7 +43,7 @@ function ProductCart({car}) {
           <span className="text-sm font-normal">{car.fuel}</span>
         </div>
       </div>
-        <div className="w-full flex px-4 pt-5 justify-center items-center gap-2">
+        <div onClick={()=>navigate(`/product/${car.id}`)} className="w-full flex px-4 pt-5 justify-center items-center gap-2">
           <button className="w-full h-10 hover:bg-red-700 border border-gray-300 hover:text-white rounded-lg" >View Details</button>
         </div>
       </div>
