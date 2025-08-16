@@ -1,8 +1,38 @@
 import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
+import { useWishlist } from "../../context/WishlistContext";
+import { useCart } from "../../context/CartContext";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
 function ProductCart({car}) {
   const navigate = useNavigate();
+  const {setWishlistCar ,WishlistCar} = useWishlist();
+  const {cart , setCart} = useCart();
+
+  const hadleaddtowishlist = (id , name) =>{
+    const exist = WishlistCar.find((item)=> item.id === id);
+    if(exist){
+      toast.info(`${name} is Already Exist.`);
+    }else{
+      setWishlistCar([...WishlistCar ,car]);
+      toast.success(`${name} add to Wishlist`);
+    }
+  }
+  
+  const handeladdTOcart = (id , name) =>{
+    const exist = cart.find((item)=> item.id === id);
+    if(exist){
+      toast.info(`${name} is Already Exist.`);
+    }else{
+      setWishlistCar([...cart ,car]);
+      toast.success(`${name} add to Wishlist`);
+    }
+  }
+  
+  const inCart = cart.filter((item)=>item.id === car.id);
+  const [ExistinCart,setEixist] =useState(inCart && inCart.length > 0 ? true : false);
+  
   return (
     <div className="relative w-2/6 md:w-full sm:w-full flex flex-col md:flex-row h-auto shadow-lg md:border border-gray-200 pb-7 md:pb-0 rounded-lg">
       <div className="w-full md:w-[60%] h-64 md-72 relative overflow-hidden rounded-t-lg md:rounded-bl-lg md:rounded-tr-none shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
@@ -13,11 +43,13 @@ function ProductCart({car}) {
       </div>
       <div className="w-full">
         <span className="absolute top-3 right-3 md:right-[29rem] bg-slate-100 px-2 py-1 rounded-md text-sm font-semibold">2006</span>
-        <span className="absolute top-3 left-16 bg-slate-100 px-2 py-1 rounded-md text-sm font-semibold">
-          <Icon icon="solar:heart-bold-duotone" width="24" height="24"  style={{color:' #c20f2f'}} />
+        <span onClick={()=>hadleaddtowishlist(car.id , car.name)}
+         className="absolute top-3 left-16 bg-slate-100 px-2 py-1 rounded-md text-sm font-semibold">
+          <Icon icon="solar:heart-bold-duotone" width="24" height="24"  style={{color:ExistinCart ? "#7f1d1d" :" #000"}} />
         </span>
-        <span className="absolute top-3 left-3 bg-slate-100 px-2 py-1 rounded-md text-sm font-semibold">
-          <Icon icon="uis:compress" width="24" height="24"  style={{color: '#c20f2f'}} />
+        <span onClick={()=>handeladdTOcart(car.id , car.name)}
+          className="absolute top-3 left-3 bg-slate-100 px-2 py-1 rounded-md text-sm font-semibold">
+          <Icon icon="mdi:cart" width="24" height="24"  style={{color:ExistinCart ? "#7f1d1d" :" #000"}} />
         </span>
         <span className="absolute top-60 md:top-3 right-3 bg-red-700 hover:bg-black text-white px-3 py-1.5 rounded-md text-base font-semibold">
           {car.price}
